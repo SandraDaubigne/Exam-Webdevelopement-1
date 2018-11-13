@@ -1,0 +1,392 @@
+@font-face {																	/*nedladdat till din mapp EWI*/
+    font-family: 'Norse';
+    src: url('../fonts/Norse.otf');
+}
+body{
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
+
+#wrapper{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    grid-column: 1fr;
+    grid-row: 60px 100px;
+    grid-template-areas: 
+    'nav'
+    'box';
+}
+
+
+#flipbook{   
+width: 100%;
+height: 550px;
+align-items: center;
+}
+
+#box{
+grid-area: box;
+margin-left: 70px;
+margin-right: 30px; 
+margin-top:30px;   
+}
+
+/*FONTSTYLE *****FONTSTYLE*******FONTSTYLE*****/
+/*STYLAR FONT PÅ INNEHÅLL*/
+#innehall a, #innehall p{
+    color:black;
+    font-size: 2vw;
+    text-decoration: none;
+    display: block;   
+    padding: 5px;
+    text-align: left;
+    font-family: Norse; 
+}
+
+/*STYLAR STORA JORDAD.NU*/
+h1{
+    display: flex;
+    margin-top: 0px; 
+    font-size: 6vw;
+    font-family: Norse;
+    color:#961b1e;  
+    text-align: left;
+}
+
+/*STYLAR "JORDAD" SOM SVART*/
+#black h1{
+    color: black;
+}
+
+/*FONT RUBRIKER*/
+h3{ 
+color:black;
+font-size: 2vw;
+text-decoration: none;   
+padding: 2px;
+text-align: left;
+font-family: Norse; 
+}
+
+/*FONT BRÖDTEXT*/
+P {
+color:black;
+font-size: 1.5vw;
+text-align: left;
+font-family: Norse; 
+
+}
+
+
+/*BAKGRUNDEN PAPPERSSIDA*/
+#innehall,.p3,.p4,.p5,.p6, .p7, .p8, .p9,
+.p10, .p11, .p12, .p13, .p14, .p15, .p16, .p17, .p18, .p19,
+.p20, .p21, .p22{
+    background-image:url(../img/papper.jpg);
+    background-size: 110%;
+    background-repeat: no-repeat;
+}
+
+
+nav{
+grid-area: nav;    
+display:flex;
+margin:auto;
+height: 30px;
+width: 560px;
+text-align: center;
+}
+
+nav > div{
+display: flex;
+flex: 1;     
+flex-basis: 50%;
+justify-content: center;
+margin-top: 15px;
+float: left;
+width: 25%;
+}
+
+nav img{
+  height: 30px;
+  width: 30px;
+}
+
+#nav_text p{
+color:black;
+font-size: 0.9vw;
+text-align: center;
+font-family: Norse; 
+margin-top: 0px;    
+margin-bottom: 20px;  
+}
+
+#dropdown{
+    position: relative;
+    display: inline-block; 
+    /*blocket lägger sin under knappen*/
+}
+/*RUTAN SOM FALLER NER*/
+#dropdown-content{
+    display: none; 
+    position: absolute;
+    width: 150%;
+    z-index: 1;
+    border: 0.5px black solid;
+    border-radius: 10px;  
+}
+
+#dropdown-content a{
+    color:black;
+    font-size: 2vw;
+    text-decoration: none;
+    display: block;   
+    padding: 10px;
+    text-align: left;
+    font-family: Norse;
+}
+
+#dropdown-content a:hover{
+    background-image:url(../img/handen.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px; /*För att bakgrundern inte ska sticka utanför
+    border radius på dropdown_content*/
+    /*Ser till att inget hamnar utanför boxen:*/
+    box-sizing: border-box;
+    border: 0,3px black solid; 
+    
+}
+#dropdown:hover #dropdown-content {
+    display:block; 
+    background-color: white;   
+}
+
+#dropdown:hover #dropdown-content a{
+     width: 100%;        
+}
+
+.shadow{
+box-shadow: 0 4px 10px #666;
+}
+
+.turn{
+    margin-left: 30px;
+}
+
+#hard1 img{
+    height: 100%;
+    width: 100%;
+}
+
+/*SIDA INNEHÅLL**SIDA INNEHÅLL/P3*/
+/*GRIDDEN TILL INNEHÅLLET OCH BAKGRUND*/
+#innehall{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'innehall_ruta1 innehall_ruta2';    
+}
+
+/*STYLAR DRAKEN*/
+#innehall_ruta1 img{
+    height: 70%;
+    width: 80%;
+    margin-top: -12px;     
+}
+
+#innehall_ruta1{
+    grid-area: innehall_ruta1;    
+}
+#innehall_ruta2{
+    grid-area: innehall_ruta2;  
+    margin-top: -15px;  
+  
+}
+
+#innehall_ruta2 a:hover{
+    background-image:url(../img/handen_innehall.png);
+    background-size: 70%;   
+    background-repeat: no-repeat;    
+}
+
+#p3{
+    display: grid; 
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 400px;
+    grid-template-areas: 
+    'sida1_ruta1'
+    'sida1_ruta2';
+}
+
+/*STYLAR HANDEN BREDVID JORDAD PÅ SIDA1*/
+#sida1_ruta1 img{
+    height: 80px;
+    width: 60px;   
+    margin-left: 7vw;  
+}
+#sida1_ruta1{
+    grid-area: sida1_ruta1;
+    display:flex;     
+}
+
+#sida1_ruta2{
+    grid-area: sida1_ruta2;
+}
+
+#sida1_ruta2 img {
+    height: 14vw; 
+    float: left;
+    margin-top: 20px; 
+    margin-right:10px; 
+
+}
+
+/*UPPSLAG FÖRORD*/
+#p4{
+    display: grid; 
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    'sida2_ruta1'
+    'sida2_ruta2';
+}
+
+#sida2_ruta1{
+    grid-area: sida2_ruta1;
+}
+
+#sida2_ruta2{
+    grid-area: sida2_ruta2;
+
+}
+
+#wrapper_mobil, #nav_mobilen{
+    display: none;
+}
+
+
+/*MOBILVERSIONEN*/
+
+@media all and (max-width:560px)  {
+    #wrapper_mobil {
+        display: grid;
+        width:100vw;
+        height: 700px;
+        margin:auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 600px;
+        /*box-sizing = Motverkar att boxen växer vid padding*/
+        box-sizing:border-box;
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        grid-template-areas: 
+        'mobil';
+    }
+body{
+background-image:url(../img/backgr_mobil.jpg);    
+background-size: 100vw;
+background-attachment: fixed;
+}
+
+
+    /*STYLAR VITA MOBIL_MENYN*/
+#dropbtn_mobil img{
+    height: 18vw; 
+    width: 18vw; 
+    margin-top: -3.5vw;
+    margin-left: 10px; 
+ 
+}
+
+nav#nav_mobilen{
+    grid-area: nav_mobilen;
+    display:flex;
+    margin:auto;
+    text-align: left;
+    background-image:url(../img/nav_mobilen.jpg);
+    background-size: 90vw;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: fixed;
+    height:100px;
+    margin-top: 0px; 
+    width: 100vw;
+    }
+
+  
+#mobil{
+    grid-area: mobil;
+    overflow-y: scroll;
+}
+    
+/*DROPDOWN MOBIL*****DROPPDOWN MOBIL****/        
+#dropdown_mobil{
+    position: relative;
+    z-index:1000;
+    display: inline-block; 
+    /*blocket lägger sin under knappen*/
+}
+/*RUTAN SOM FALLER NER*/
+#dropdown-content_mobil{
+    display: none; 
+    position: absolute;
+    width: 40%;
+    z-index: 1;
+    border: 0.5px black solid;
+    border-radius: 10px;  
+    background-attachment: fixed;
+    background-color: white;
+}
+        
+#dropdown-content_mobil a{
+    color:black;
+    font-size: 7vw;
+    text-decoration: none;
+    display: block;   
+    padding: 4px;
+    text-align: left;
+    font-family: Norse;
+}
+
+#dropdown-content_mobil{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px; /*För att bakgrundern inte ska sticka utanför
+    border radius på dropdown_content*/
+    /*Ser till att inget hamnar utanför boxen:*/
+    box-sizing: border-box;
+    border: 0.3px black solid; 
+    display:block;
+    
+}
+
+#dropbtn_mobil{
+    display: block; 
+    width: 60px; 
+
+}
+
+
+/*STÄNG AV DESKTOP*/
+#wrapper {
+    display: none;
+}
+
+.hide{
+    display:none!important;
+}
+}           
+
+
+
+
+
